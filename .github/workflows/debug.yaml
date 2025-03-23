@@ -4,9 +4,6 @@ run-name: Debug - ${{ github.ref_name || github.ref }}
 
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - test
 
 jobs:
   ci_debugger:
@@ -16,5 +13,4 @@ jobs:
     steps:
       - name: Template
         run: |
-          eche "Hello, world!"
-          echo "This is a device running on ${{ runner.os }}!"
+          echo "Hello world!"
