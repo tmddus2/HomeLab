@@ -50,6 +50,19 @@ $ sudo ./svc.sh start
 
 <img width="567" alt="image (6)" src="https://github.com/user-attachments/assets/7d9d3731-4383-4c42-8bf6-feb74a4d6ea8" />
 
+
+- 백그라운드에서 계속 프로세스를 실행시키려면
+    - 👎🏻 nohup
+        - 백그라운드에서 간단하게 프로세스를 실행할 때는 유용하지만, 영속적으로 실행되어야 하는 경우에는 적합하지 않음
+        - 터미널 세션이 종료되어도 계속 실행된다
+        - 간단하고 사용하기 쉽고, 빠르게 실행할 수 있다는 장점
+        - 프로세스 모니터링이나 자동 재시작과 같은 기능 없음
+        - 시스템 재부팅 시 자동으로 시작되지 않음
+    - 👍🏻 systemd
+        - 리눅스 시스템 서비스 매니저
+        - 서비스 자동시작이나 재시작 등 서비스 관리 용이
+        - 로그 관리가 체계적
+
 </br>
 
 ## GitHub Actions Workflow
@@ -94,7 +107,9 @@ jobs:
     - Hello world! 출력하고
     - ssh key 세팅하고
     - docker (없으면) 설치하도록 작성
- 
+
+ - `on: workflow_dispatch: {}`
+     - GitHub Actions에서 워크플로우를 사용자가 직접 실행할 수 있도록 해주는 트리거
 
 <img width="567" alt="image" src="https://github.com/user-attachments/assets/4f50790e-9f9f-4bb8-bfe9-4585c7e9410e" />
 
